@@ -30,7 +30,7 @@ set incsearch " incremental search
 set showcmd " show the command as it's being entered
 set ignorecase " ignore case when searching
 set smartcase " unless the pattern contains an uppercase char
-set clipboard=unnamed,unnamedplus " use * and + registers for yanks
+set clipboard=unnamedplus " use + register for yanks
 set matchpairs+=<:> " match also < and >
 set scrolloff=5 " always show 5 lines of context when scrolling
 set listchars=tab:>·,trail:~,extends:>,precedes:<
@@ -39,7 +39,7 @@ set list " show unprintable characters with the listchar format
 set splitbelow " open new splits in best direction
 set splitright " "
 set colorcolumn=80 " show column at 80 characters
-highlight ColorColumn ctermbg=8
+highlight ColorColumn ctermbg=8 " and set it's color
 
 " Mappings
 
