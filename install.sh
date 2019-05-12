@@ -8,7 +8,9 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc bash_aliases vim vimrc"    # list of files/folders to symlink in homedir
+general_files="bashrc bash_aliases vim vimrc"
+debdev_files="deb_bashrc quiltrc-dpkg pbuilderrc devscripts gbp.conf"    # list of files/folders to symlink in homedir
+files="$general_files $debdev_files"
 
 ##########
 

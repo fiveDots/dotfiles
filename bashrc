@@ -88,7 +88,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -lA'
+alias ll='ls -lhA'
 #alias la='ls -A'
 #alias l='ls -CF'
 
@@ -113,7 +113,12 @@ if ! shopt -oq posix; then
 fi
 
 # My additions below
-export EDITOR=vim
+export EDITOR=/usr/bin/vim
+
+# Debian development configuration
+if [ -f ~/.deb_bashrc ]; then
+    . ~/.deb_bashrc
+fi
 
 # Go Config
 export PATH=$PATH:/usr/local/go/bin

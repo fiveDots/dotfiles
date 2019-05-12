@@ -1,2 +1,2 @@
-alias bashconfig="$EDITOR ~/.bashrc"
-alias vimconfig="$EDITOR ~/.vimrc"
+alias bashconfig='vim ~/.bashrc'
+alias vimconfig='vim ~/.vimrc'

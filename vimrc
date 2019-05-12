@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'moll/vim-bbye'
+Plugin 'fatih/vim-go'
 call vundle#end()
 
 " Enable loading of plugins and indent format depending on filetype
@@ -20,6 +21,9 @@ syntax on
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+" Enable code completition
+set omnifunc=syntaxcomplete#Complete
 
 " Flags
 
@@ -43,8 +47,10 @@ highlight ColorColumn ctermbg=8 " and set it's color
 
 " Mappings
 
-imap jk <Esc> " set different escape sequence for insert
-nnoremap ge :cal cursor(0, 80)<CR> " go to column 80
+" set different escape sequence for insert
+inoremap jk <Esc>
+" go to column 80
+nnoremap ge :cal cursor(0, 80)<CR>
 
 " Move trough windows using Ctrl-{h,j,k,l}
 inoremap <C-h> <C-\><C-N><C-w>h

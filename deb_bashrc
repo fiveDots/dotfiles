@@ -1,0 +1,10 @@
+DEBEMAIL="ekrivoy@gmail.com"
+DEBFULLNAME="Emanuel Krivoy"
+export DEBEMAIL DEBFULLNAME
+
+. /usr/lib/mc/mc.sh
+
+# quilt alias that operates on the debian/patches directory
+alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
+complete -F _quilt_completion $_quilt_complete_opt dquilt
+
