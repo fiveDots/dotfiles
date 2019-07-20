@@ -6,7 +6,7 @@ MIRRORSITE="http://deb.debian.org/debian/"
 APTCACHE=/var/cache/apt/archives
 #BUILDRESULT=/var/cache/pbuilder/result/
 BUILDRESULT=../
-EXTRAPACKAGES="ccache lintian libeatmydata1"
+EXTRAPACKAGES="ccache lintian eatmydata"
 
 # enable to use libeatmydata1 for pbuilder
 export LD_PRELOAD=${LD_PRELOAD+$LD_PRELOAD:}libeatmydata.so
