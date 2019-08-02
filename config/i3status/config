@@ -11,8 +11,8 @@ order += "battery 0"
 order += "memory"
 order += "cpu_usage"
 order += "cpu_temperature 0"
-order += "tztime date"
 order += "tztime ccs"
+order += "tztime date"
 order += "tztime local"
 
 wireless wlp0s20f3 {
@@ -67,12 +67,12 @@ tztime date {
 }
 
 tztime ccs {
-        format = "ccs: %H:%M:%S"
+        format = "ccs: %H:%M"
         timezone = "America/Caracas"
         hide_if_equals_localtime = true
 	separator = false
 }
 
 tztime local {
-        format = "%H:%M:%S"
+        format = "%H:%M"
 }

@@ -2,19 +2,24 @@ AUTO_DEBSIGN="${AUTO_DEBSIGN:-no}"
 PDEBUILD_PBUILDER=cowbuilder
 HOOKDIR="/var/cache/pbuilder/hooks"
 MIRRORSITE="http://deb.debian.org/debian/"
-#APTCACHE=/var/cache/pbuilder/aptcache
-APTCACHE=/var/cache/apt/archives
-#BUILDRESULT=/var/cache/pbuilder/result/
-BUILDRESULT=../
+APTCACHE="/var/cache/pbuilder/aptcache"
+BUILDRESULT="../"
 EXTRAPACKAGES="ccache lintian eatmydata"
 
-# enable to use libeatmydata1 for pbuilder
-export LD_PRELOAD=${LD_PRELOAD+$LD_PRELOAD:}libeatmydata.so
+# Enable to use libeatmydata1 for pbuilder
+export LD_PRELOAD=${LD_PRELOAD+"$LD_PRELOAD "}libeatmydata.so
 
-# enable ccache for pbuilder
-export PATH="/usr/lib/ccache${PATH+:$PATH}"
-export CCACHE_DIR="/var/cache/pbuilder/ccache"
-BINDMOUNTS="${CCACHE_DIR}"
+# Enable ccache for pbuilder
+#export PATH="/usr/lib/ccache${PATH+:$PATH}"
+#export CCACHE_DIR="/var/cache/pbuilder/ccache"
+#BINDMOUNTS="${CCACHE_DIR}"
+
+# Bind dependency dir. Set DEPS=<project-name> to add the packages in
+# $DEPBASE/$DEPS (see D05deps in $HOOKDIR). From wiki.debian.org/PbuilderTricks.
+if [ -n "$DEPS" ] ; then
+        export DEPSBASE=/var/cache/pbuilder/deps
+        BINDMOUNTS+=" $DEPSBASE"
+fi
 
 # parallel make
 #DEBBUILDOPTS=-j8
